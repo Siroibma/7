@@ -1,0 +1,104 @@
+<!--
+File: /~alora1/public_html/assignments/6/index.html (91.46) COMP 4610 GUI Programming I
+Assignment 7: Dynmaic Multiplication Table with slider and tabs
+Ambioris Lora, UMass Lowell Computer Science, alora1@cs.uml.edu
+Copyright (c) 2020 by Ambioris Lora. All rights reserved. May be
+freely
+copied or excerpted for educational purposes with credit to the
+author.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Assignment 5</title>
+      <!-- Style sheet for webpage -->
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <h2>Welcome To My Multiplication Table For GUI</h2>
+      <form id="signup" novalidate="novalidate" class="form1">
+          <div class="form-group">
+              <label class="sr-only" for="num1">Number 1(row)</label>
+              <input class="form-control" id="num1" name="num1" placeholder="1" data-required>
+          </div>
+          <div id = "slider1">
+          </div>
+          <div class="form-group">
+              <label class="sr-only" for="num2">Number 2(row)</label>
+              <input class="form-control" id="num2" name="num2" placeholder="1" data-required>
+          </div>
+          <div id = "slider2">
+          </div>
+          <div class="form-group">
+              <label class="sr-only" for="num3">Number 3(col)</label>
+              <input class="form-control" id = "num3" name="num3" placeholder="1" data-required>
+          </div>
+          <div id = "slider3">
+          </div>
+          <div class="form-group">
+              <label class="sr-only" for="num4">Number 4(col)</label>
+              <input class="form-control" id = "num4" name="num4" placeholder="1" data-required>
+          </div>
+          <div id = "slider4">
+          </div>
+          <button class= "but_sub" id = "button1" onclick="test()" type="button">Enter</button>
+          <button class= "but_sub" id = "button2" type="button">Save</button>
+          <button class= "but_sub" id = "button4" type="button">Delete All</button>
+      </form>
+
+
+      <!-- Rules For using the Table -->
+      <div class="rules">
+        <h3>Instructions</h3>
+        <ol>
+          <li>Enter a Number from -50 to 50</li>
+          <li>Do not enter anything that is not a number</li>
+          <li>I will Not allow negative Numbers to stay negative. I will Perform Absolute value on them</li>
+          <li>Do not put the same numbers in a row or column EX. 5-5</li>
+          <li>Do not put Zero</li>
+          <li>Do not put e</li>
+        </ol>
+      </div>
+
+      <!-- place to put tabs -->
+      <div id="myTabs">
+        <ul>
+          <li><a href="#a">Tab 1</a></li>
+          <li><a href="#b">Tab 2</a></li>
+       </ul>
+       <div id="a">
+       </div>
+       <div id="b">
+       </div>
+     </div>
+     <button type="button" id="remove" class="but_sub">Remove!</button><br>
+     <button type="button" id="add" class="but_sub">Add a new tab!</button>
+
+
+      <!--This Javascript file is for validation of inputs and generating the table -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script src="generate.js"></script>
+      <script type="text/javascript">
+      //got this code from the page provided https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/jQueryUI1.8_Ch03_TabsWidget.pdf
+      //the following functions allow us to erase individual tabs and add tabs
+      (function($){
+        $("#myTabs").tabs();
+        $("#remove").click(function() {
+          $("#myTabs").find( ".ui-tabs-nav li:eq(0)" ).remove();
+          $( "#myTabs" ).tabs( "refresh" );
+        });
+        $("#add").click(function() {
+          $("#myTabs ul").append('<li><a href="#tabs-1">title1</a></li>');
+          $("#myTabs").append('<div id="tabs-1"></div>');
+          $("#myTabs" ).tabs( "refresh" );
+  });
+})(jQuery);
+      </script>
+    </body>
+</html>

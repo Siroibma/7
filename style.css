@@ -1,0 +1,106 @@
+/*
+File: /~alora1/public_html/assignments/5/style.css (91.46) COMP 4610 GUI Programming I
+Assignment 7: Dynmaic Multiplication Table with jquery
+Ambioris Lora, UMass Lowell Computer Science, alora1@cs.uml.edu
+Copyright (c) 2020 by Ambioris Lora. All rights reserved. May be
+freely
+copied or excerpted for educational purposes with credit to the
+author.
+*/
+
+/*This file handles the style of the page along with the styling of the input forms */
+
+
+body {
+    margin: 0;
+}
+.error{
+    color:#FF0000;
+}
+
+div {
+    margin-left: .5%;
+}
+
+td {
+    border: 1px solid black;
+}
+
+table {
+    empty-cells: hide;
+    margin: auto;
+    overflow: scroll;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+label {
+    color: black;
+    font-weight: bolder;
+}
+
+html {
+    background-color: mistyrose;
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 100%;
+}
+
+
+
+input {
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px black solid;
+}
+
+.but_sub {
+    margin-left: 70px;
+    background-color: cornsilk;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+
+td:nth-child(1) {
+    background-color: red;
+}
+
+tr:first-child {
+    background-color: red;
+}
+
+#slider {
+    margin: 0px;
+}
+
+
+.ui-slider-horizontal {
+    height: 8px;
+    width: 5em;
+}
+.ui-slider .ui-slider-handle {
+    height: 15px;
+    width: 5px;
+    padding-left: 5px;
+}
+
+.tab-panels {
+    margin: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background: white;
+}
+
+#add_tab {
+    cursor: pointer; 
+}
